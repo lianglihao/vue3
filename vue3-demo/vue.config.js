@@ -11,17 +11,17 @@ module.exports = {
         port: 8081, //端口号
         https: false,
         hotOnly: false,
-        proxy: {
-            // 配置跨域
-            'api': {
-                target: 'http//localhost:5000/api/',
-                ws: true,
-                changeOrigin: true,
-                pathRewrite: {
-                    '^/api': ''
-                }
-            }
-        },
+        // proxy: {
+        //     // 配置跨域
+        //     'api': {
+        //         target: 'http//localhost:5000/api/',
+        //         ws: true,
+        //         changeOrigin: true,
+        //         pathRewrite: {
+        //             '^/api': ''
+        //         }
+        //     }
+        // },
         before: (app) =>{ //提供在服务器内部的所有其他中间件之前执行自定义中间件的能力
             app.get("/api/users", (req,res) => {
                 res.json(package)
